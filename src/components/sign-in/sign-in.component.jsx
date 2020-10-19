@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+
 import { signInWithGoogle } from '../../firebase/firebase.utils'
-import './sign-in.styles.scss'
 import CustomButton from '../custom-button/custom-button.component'
 import FormInput from '../form-input/form-input.component'
+
+import './sign-in.styles.scss'
 
 class SignIn extends Component {
   state = {
