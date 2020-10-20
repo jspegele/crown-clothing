@@ -1,17 +1,21 @@
 .custom-button {
+  align-items: center;
   background-color: black;
   border: 1px solid black;
   color: white;
   cursor: pointer;
+  display: flex;
   font-family: 'Open Sans Condensed';
   font-size: 15px;
   font-weight: bolder;
   height: 50px;
+  justify-content: center;
   letter-spacing: 0.5px;
   line-height: 50px;
   min-width: 165px;
   padding: 0 35px 0 35px;
   text-transform: uppercase;
+  transition: background-color .2s, border-color .2s, color .2s;
   width: auto;
 
   &:hover {
@@ -28,6 +32,18 @@
     &:hover {
       background-color: #357ae8;
       border-color: #357ae8;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: 1px solid black;
     }
   }
 }
