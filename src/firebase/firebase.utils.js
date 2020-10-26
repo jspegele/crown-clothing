@@ -12,7 +12,9 @@ const config = {
   appId: "1:241507937828:web:aba72eabc5fc0b2d8932b1",
   measurementId: "G-RGKW51DNBL"
 }
+firebase.initializeApp(config)
 
+// Check if given user exists and add the user if not, then return the userRef
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return
 
@@ -38,7 +40,39 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
-firebase.initializeApp(config)
+// Add a set of collection objects to firebase
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey)
+
+  const batch = firestore.batch()
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc()
+    batch.set(newDocRef, obj)
+  })
+
+  return await batch.commit()
+}
+
+// Transform collections snapshot into array of objects with properties required for shop
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data()
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  })
+
+  console.log(transformedCollection)
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection
+    return accumulator
+  }, {})
+}
 
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
