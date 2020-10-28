@@ -6,7 +6,7 @@ const FormInput = ({ handleChange, label, ...props }) => (
     <InputContainer onChange={handleChange} {...props} />
     {label ? (
       <FormInputLabel
-        className={`${props.value.length ? 'shrink' : ''}l`}
+        className={props.value.length ? 'shrink' : ''}
       >
         {label}
       </FormInputLabel>

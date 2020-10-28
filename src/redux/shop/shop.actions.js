@@ -18,7 +18,6 @@ export const fetchCollectionsFailure = errorMessage => ({
 
 export const fetchCollectionsStartAsync = () => {
   return dispatch => {
-    console.log('HELLO')
     const collectionRef = firestore.collection('collections')
     dispatch(fetchCollectionsStart())
 
