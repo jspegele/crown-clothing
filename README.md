@@ -1,3 +1,3 @@
-# Crown Clothing
+# Crwn Books
 
 A portfolio ecommerce project.
