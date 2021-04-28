@@ -7,6 +7,7 @@ import { selectCurrentUser } from './redux/user/user.selector'
 import { checkUserSession } from './redux/user/user.actions'
 
 import Header from './components/header/header.component'
+import Footer from './components/footer/footer.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component'
@@ -21,7 +22,7 @@ const App = ({ checkUserSession, currentUser }) => {
   }, [checkUserSession]);
 
   return (
-    <div>
+    <div className="container">
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -39,6 +40,7 @@ const App = ({ checkUserSession, currentUser }) => {
           }
         />
       </Switch>
+      <Footer />
     </div>
   )
 }

@@ -7,7 +7,7 @@ export const CollectionItemContainer = styled.div`
   flex-direction: column;
   height: 350px;
   position: relative;
-  width: 22vw;
+  width: 100%;
 
   &:hover {
     .image {
@@ -18,6 +18,10 @@ export const CollectionItemContainer = styled.div`
       display: flex;
       opacity: 0.85;
     }
+  }
+
+  @media (min-width: 1025px) {
+    width: 22vw;
   }
 `
 

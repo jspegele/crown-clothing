@@ -12,6 +12,19 @@ export const TitleContainer = styled.h1`
 `
 
 export const PreviewContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+
+  & > div {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 451px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1025px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `

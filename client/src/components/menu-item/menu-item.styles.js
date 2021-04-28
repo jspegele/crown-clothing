@@ -8,8 +8,8 @@ export const MenuItemContainer = styled.div`
   height: ${({ size }) => (size ? '380px' : '240px')};
   justify-content: center;
   margin: 0 7.5px 15px;
-  min-width: 30%;
   overflow: hidden;
+  width: 100%;
 
   &:hover {
     cursor: pointer;
@@ -35,6 +35,11 @@ export const MenuItemContainer = styled.div`
 
   &:last-child {
     margin-left: 7.5px;
+  }
+
+  @media (min-width: 769px) {
+    min-width: 30%;
+    width: auto;
   }
 `
 
