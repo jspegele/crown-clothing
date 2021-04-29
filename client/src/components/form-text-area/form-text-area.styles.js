@@ -26,6 +26,7 @@ export const TextAreaContainer = styled.textarea`
   border-radius: 0;
   color: ${subColor};
   display: block;
+  font-family: 'Open Sans Condensed', Helvetica, sans-serif;
   font-size: 18px;
   margin: 25px 0;
   padding: 10px 10px 10px 5px;
